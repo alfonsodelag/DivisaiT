@@ -6,6 +6,7 @@
     height: 80%;
     background: $background-light;
     border-radius: 1rem;
+    margin-bottom: 30px;
 
     &__current {
         display: flex;
@@ -33,20 +34,14 @@
     }
 
     &__map {
-        @media (min-width: $media-breakpoint-up-xs) {
-            width: 60%;
-        }
-
-        @media (min-width: $media-breakpoint-up-md) {
-            width: 70%;
-        }
+        width: 100%;
     }
 
     &__daily {
         display: grid;
         padding-top: 20px;
         gap: 10px;
-        height: 540px;
+        height: 450px;
         overflow-y: scroll;
         margin-top: 30px;
 
