@@ -1,0 +1,32 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px;
+    color: white;
+
+    &__logo {
+        background: #F5F5F5;
+
+        img {
+            width: 153px;
+        }
+    }
+
+    &__navigation {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+
+        &__links--active {
+            color: white;
+            text-decoration: underline;
+        }
+
+        &__links--inactive {
+            color: white;
+            text-decoration: none;
+        }
+    }
+
+}

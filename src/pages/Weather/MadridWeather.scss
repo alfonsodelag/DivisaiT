@@ -1,0 +1,62 @@
+@import "../../scss/index.scss";
+
+.weather {
+    padding: 20px;
+    width: 70%;
+    height: 80%;
+    background: $background-light;
+    border-radius: 1rem;
+
+    &__current {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        @media (min-width: $media-breakpoint-up-md) {
+            display: flex;
+            flex-direction: row;
+        }
+    }
+
+    &__date {
+        color: $primary-color;
+    }
+
+    &__city {
+        color: $secondary-color;
+    }
+
+    &__details {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+
+    &__map {
+        @media (min-width: $media-breakpoint-up-xs) {
+            width: 60%;
+        }
+
+        @media (min-width: $media-breakpoint-up-md) {
+            width: 70%;
+        }
+    }
+
+    &__daily {
+        display: grid;
+        padding-top: 20px;
+        gap: 10px;
+        height: 540px;
+        overflow-y: scroll;
+        margin-top: 30px;
+
+        @media (min-width: $media-breakpoint-up-xs) {
+            grid-template-columns: repeat(1, minmax(0, 1fr));
+        }
+
+        @media (min-width: $media-breakpoint-up-md) {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+    }
+
+}
