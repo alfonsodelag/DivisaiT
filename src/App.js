@@ -12,8 +12,8 @@ function App() {
       <div className="app__routes">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/tiempo-en-Madrid" element={<MadridWeather />} />
-          <Route path="/aparcamientos-publicos" element={<ParkingSpots />} />
+          <Route exact path="/tiempo-en-Madrid" element={<MadridWeather />} />
+          <Route exact path="/aparcamientos-publicos" element={<ParkingSpots />} />
         </Routes>
       </div>
     </div>
