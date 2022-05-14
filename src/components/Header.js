@@ -1,5 +1,5 @@
 import './Header.scss';
-import divisaItLogo from '../assets/images/divisait-logo.jpeg';
+import divisaItLogo from '../assets/images/divisait-logo.jpg';
 import logoMadrid from '../assets/images/logo-madrid.png';
 import { NavLink } from 'react-router-dom';
 

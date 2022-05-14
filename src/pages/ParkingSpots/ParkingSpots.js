@@ -1,41 +1,64 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './ParkingSpots.scss'
-import Card from '../../UI/Card';
+import Spinner from '../../UI/Spinner/Spinner';
+import Card from '../../UI/Card/Card';
+import credentials from '../../credentials';
+import Map from '../../UI/Map/Map';
+
+const mapURL = `https://maps.googleapis.com/maps/api/js?v=3.exp&key=${credentials.mapsKey}`;
 
 const ParkingSpots = () => {
 
-    const [parkingSpots, setParkingSpots] = useState('')
+    const [parkingSpots, setParkingSpots] = useState('');
+    const [isLoading, setIsLoading] = useState(false);
 
     useEffect(() => {
+        setIsLoading(true);
         async function fethParkingSpotsData() {
-            return await axios.get('https://datos.madrid.es/egob/catalogo/202625-0-aparcamientos-publicos.json', {
-                headers: {
-                    'Access-Control-Allow-Origin': '*',
-                    'Content-Type': 'application/json',
-                },
-            })
-                .then(response => {
-                    console.log("response", response);
-                })
+            const response = await axios.get('https://datos.madrid.es/egob/catalogo/202625-0-aparcamientos-publicos.json').then(response => {
+                setParkingSpots(response.data);
+            });
+            setIsLoading(false);
         }
         fethParkingSpotsData();
     }, []);
 
+
+    const parkingSpotsData = parkingSpots["@graph"];
+    console.log("parkingSpotsData", parkingSpotsData)
+
+    if (isLoading) {
+        return (
+            <Spinner />
+        );
+    }
+
     return (
-        <div className="parking-spots">
-            <Card>
-                <h1>Hola</h1>
-                <h1>Hola</h1>
-                <h1>Hola</h1>
-                <p>If it contains spaces, it is not legal HTML. You shouldn't expect this to work. Here is the relevant section of the HTML 4.01 specification.
-
-                    [EDIT] As others have noted, you can get around this by assigning one or more class names to the div and using a class name to do the selection.</p>
-
-            </Card>
-        </div>
-
-    )
+        <Card>
+            <Map
+                googleMapURL={mapURL}
+                containerElement={<div style={{ height: '400px' }} />}
+                mapElement={<div style={{ height: '100%' }} />}
+                loadingElement={<Spinner />}
+            />
+            <div className="parking-spots">
+                {parkingSpotsData && parkingSpotsData.map(parkingSpot => (
+                    <div key={parkingSpot.id} className="parking-spots__data">
+                        <div className="parking-spots__details">
+                            <h4 className="parking-spots__title">{parkingSpot.title}</h4>
+                            <p>Localidad: {parkingSpot.address.locality}</p>
+                            <p>Código Postal: {parkingSpot.address["postal-code"]}</p>
+                            <p>Dirección de Aparcamiento: {parkingSpot.address["street-address"]}</p>
+                        </div>
+                        <button className="parking-spots__button">
+                            <a href={`https://www.google.com/maps/place/${parkingSpot.address["street-address"]}`}>COMO LLEGAR</a>
+                        </button>
+                    </div>
+                ))}
+            </div>
+        </Card>
+    );
 }
 
-export default ParkingSpots
+export default ParkingSpots;

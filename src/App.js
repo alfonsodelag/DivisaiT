@@ -1,3 +1,4 @@
+import React from 'react';
 import { Route, Routes } from "react-router";
 import MadridWeather from './pages/Weather/MadridWeather';
 import ParkingSpots from './pages/ParkingSpots/ParkingSpots';
