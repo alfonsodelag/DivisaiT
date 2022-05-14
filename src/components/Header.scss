@@ -1,4 +1,10 @@
-.header {
+.mobile-header {
+    display: 'flex';
+    flex-direction: 'row';
+    align-items: 'center';
+}
+
+.desktop-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -6,16 +12,12 @@
     color: white;
 
     &__logo {
-        background: #F5F5F5;
-
-        img {
-            width: 153px;
-        }
+        width: 70% !important;
     }
 
     &__navigation {
         display: flex;
-        justify-content: space-between;
+        justify-content: space-between !important;
         gap: 20px;
 
         &__links--active {
@@ -29,4 +31,11 @@
         }
     }
 
+    a,
+    a:hover,
+    a:focus,
+    a:active {
+        text-decoration: none;
+        color: inherit;
+    }
 }

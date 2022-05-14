@@ -1,0 +1,16 @@
+.home {
+    &__title {
+        height: 100vh;
+        padding: 20px;
+
+        h1 {
+            text-align: center;
+            color: white;
+        }
+
+        p {
+            text-align: center;
+            color: white;
+        }
+    }
+}

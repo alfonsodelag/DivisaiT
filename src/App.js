@@ -4,7 +4,7 @@ import MadridWeather from './pages/Weather/MadridWeather';
 import ParkingSpots from './pages/ParkingSpots/ParkingSpots';
 import Header from './components/Header';
 import './App.scss';
-import Home from "./pages/Home";
+import Home from "./pages/Home/Home";
 
 function App() {
   return (
@@ -12,9 +12,9 @@ function App() {
       <Header />
       <div className="app__routes">
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route exact path="/tiempo-en-Madrid" element={<MadridWeather />} />
-          <Route exact path="/aparcamientos-publicos" element={<ParkingSpots />} />
+          <Route exact path="/" element={<Home />} />
+          <Route path="/tiempo-en-Madrid" element={<MadridWeather />} />
+          <Route path="/aparcamientos-publicos" element={<ParkingSpots />} />
         </Routes>
       </div>
     </div>
