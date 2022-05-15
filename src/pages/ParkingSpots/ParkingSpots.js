@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
 import './ParkingSpots.scss'
+import axios from 'axios';
 import Spinner from '../../UI/Spinner/Spinner';
 import Card from '../../UI/Card/Card';
 import credentials from '../../credentials';
@@ -16,7 +16,7 @@ const ParkingSpots = () => {
     useEffect(() => {
         setIsLoading(true);
         async function fethParkingSpotsData() {
-            const response = await axios.get('https://datos.madrid.es/egob/catalogo/202625-0-aparcamientos-publicos.json').then(response => {
+            const responseData = await axios.get('https://datos.madrid.es/egob/catalogo/202625-0-aparcamientos-publicos.json').then(response => {
                 setParkingSpots(response.data);
             });
             setIsLoading(false);
@@ -24,9 +24,7 @@ const ParkingSpots = () => {
         fethParkingSpotsData();
     }, []);
 
-
     const parkingSpotsData = parkingSpots["@graph"];
-    console.log("parkingSpotsData", parkingSpotsData)
 
     if (isLoading) {
         return (
