@@ -1,9 +1,9 @@
 import React from 'react';
 import { Route, Routes } from "react-router";
+import './App.scss';
 import MadridWeather from './pages/Weather/MadridWeather';
 import ParkingSpots from './pages/ParkingSpots/ParkingSpots';
 import Header from './components/Header';
-import './App.scss';
 import Home from "./pages/Home/Home";
 
 function App() {

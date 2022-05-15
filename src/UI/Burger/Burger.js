@@ -1,12 +1,10 @@
-import React, { useEffect, useState } from "react";
-
+import React, { useState } from "react";
 import { BiMenuAltRight } from "react-icons/bi";
 import { AiOutlineClose } from "react-icons/ai";
 import classes from "./Burger.module.scss";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Burger = () => {
-    const navigate = useNavigate();
     const [menuOpen, setMenuOpen] = useState(false);
 
     const menuToggleHandler = () => {
@@ -15,24 +13,24 @@ const Burger = () => {
 
 
     return (
-        <header className={classes.header}>
-            <div className={classes.header__content}>
+        <header className={classes.burger}>
+            <div className={classes.burger__content}>
                 <nav
-                    className={`${classes.header__content__nav} ${menuOpen && classes.isMenu}`}
+                    className={`${classes.burger__content__nav} ${menuOpen && classes.isMenu}`}
                 >
                     <ul>
                         <li>
-                            <NavLink onClick={menuToggleHandler} className={({ isActive }) => (isActive ? 'header__navigation__links--active' : 'header__navigation__links--inactive')} to="/">Home</NavLink>
+                            <NavLink onClick={menuToggleHandler} className={({ isActive }) => (isActive ? 'burger__navigation__links--active' : 'burger__navigation__links--inactive')} to="/">Home</NavLink>
                         </li>
                         <li>
-                            <NavLink onClick={menuToggleHandler} className={({ isActive }) => (isActive ? 'header__navigation__links--active' : 'header__navigation__links--inactive')} to="/tiempo-en-Madrid">Clima de Madrid</NavLink>
+                            <NavLink onClick={menuToggleHandler} className={({ isActive }) => (isActive ? 'burger__navigation__links--active' : 'burger__navigation__links--inactive')} to="/tiempo-en-Madrid">Clima de Madrid</NavLink>
                         </li>
                         <li>
-                            <NavLink onClick={menuToggleHandler} className={({ isActive }) => (isActive ? 'header__navigation__links--active' : 'header__navigation__links--inactive')} to="/aparcamientos-publicos">Aparcamientos en Madrid</NavLink>
+                            <NavLink onClick={menuToggleHandler} className={({ isActive }) => (isActive ? 'burger__navigation__links--active' : 'burger__navigation__links--inactive')} to="/aparcamientos-publicos">Aparcamientos en Madrid</NavLink>
                         </li>
                     </ul>
                 </nav>
-                <div className={classes.header__content__toggle}>
+                <div className={classes.burger__content__toggle}>
                     {!menuOpen ? (
                         <BiMenuAltRight onClick={menuToggleHandler} />
                     ) : (

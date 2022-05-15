@@ -42,12 +42,12 @@ const MadridWeather = () => {
 
     return (
         <Card>
-            {/* <Map
+            <Map
                 googleMapURL={mapURL}
                 containerElement={<div style={{ height: '400px' }} />}
                 mapElement={<div style={{ height: '100%' }} />}
                 loadingElement={<p>Cargando</p>}
-            /> */}
+            />
             <section className="weather">
                 <div>
                     <div>
