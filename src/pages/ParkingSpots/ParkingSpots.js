@@ -3,10 +3,9 @@ import './ParkingSpots.scss'
 import axios from 'axios';
 import Spinner from '../../UI/Spinner/Spinner';
 import Card from '../../UI/Card/Card';
-import credentials from '../../credentials';
 import Map from '../../UI/Map/Map';
 
-const mapURL = `https://maps.googleapis.com/maps/api/js?v=3.exp&key=${credentials.mapsKey}`;
+const mapURL = `https://maps.googleapis.com/maps/api/js?v=3.exp&key=${process.env.REACT_APP_MAPS_API_KEY}`;
 
 const ParkingSpots = () => {
 
