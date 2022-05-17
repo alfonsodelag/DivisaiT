@@ -1,6 +1,7 @@
 @import "./../../scss/variables";
 
 .burger {
+    z-index: 999;
 
     &__content {
         color: $light;

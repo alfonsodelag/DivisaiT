@@ -11,7 +11,6 @@ const Burger = () => {
         setMenuOpen((p) => !p);
     };
 
-
     return (
         <header className={classes.burger}>
             <div className={classes.burger__content}>

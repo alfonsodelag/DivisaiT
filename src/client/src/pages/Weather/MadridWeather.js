@@ -5,7 +5,7 @@ import axios from 'axios';
 import './MadridWeather.scss';
 import Map from '../../UI/Map/Map';
 
-const mapURL = `https://maps.googleapis.com/maps/api/js?v=3.exp&key=${process.env.REACT_APP_MAPS_API_KEY}`;
+const mapURL = `https://maps.googleapis.com/maps/api/js?v=3.exp&key=${process.env.REACT_APP_TEST}`;
 
 const date = new Date();
 const timestamp = date.getTime();
@@ -43,8 +43,8 @@ const MadridWeather = () => {
         <Card>
             <Map
                 googleMapURL={mapURL}
-                containerElement={<div style={{ height: '400px' }} />}
-                mapElement={<div style={{ height: '100%' }} />}
+                containerElement={<div style={{ height: '400px', zIndex: '0' }} />}
+                mapElement={<div style={{ height: '100%', zIndex: '0' }} />}
                 loadingElement={<p>Cargando</p>}
             />
             <section className="weather">

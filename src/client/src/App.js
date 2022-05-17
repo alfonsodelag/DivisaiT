@@ -6,9 +6,8 @@ import ParkingSpots from './pages/ParkingSpots/ParkingSpots';
 import Header from './components/Header';
 import Home from "./pages/Home/Home";
 
-console.log(process.env.REACT_APP_MAPS_API_KEY)
-
 function App() {
+
   return (
     <div className="app">
       <Header />

@@ -5,7 +5,7 @@ import Spinner from '../../UI/Spinner/Spinner';
 import Card from '../../UI/Card/Card';
 import Map from '../../UI/Map/Map';
 
-const mapURL = `https://maps.googleapis.com/maps/api/js?v=3.exp&key=${process.env.REACT_APP_MAPS_API_KEY}`;
+const mapURL = `https://maps.googleapis.com/maps/api/js?v=3.exp&key=${process.env.REACT_APP_TEST}`;
 
 const ParkingSpots = () => {
 
@@ -15,7 +15,7 @@ const ParkingSpots = () => {
     useEffect(() => {
         setIsLoading(true);
         async function fethParkingSpotsData() {
-            const responseData = await axios.get('https://datos.madrid.es/egob/catalogo/202625-0-aparcamientos-publicos.json').then(response => {
+            const responseData = await axios.get('http://localhost:4000/').then(response => {
                 setParkingSpots(response.data);
             });
             setIsLoading(false);
@@ -49,7 +49,7 @@ const ParkingSpots = () => {
                             <p>Dirección de Aparcamiento: {parkingSpot.address["street-address"]}</p>
                         </div>
                         <button className="parking-spots__button">
-                            <a href={`https://www.google.com/maps/place/${parkingSpot.address["street-address"]}`}>COMO LLEGAR</a>
+                            <a href={`https://www.google.com/maps/place/${parkingSpot.address["street-address"]}`}>CÓMO LLEGAR</a>
                         </button>
                     </div>
                 ))}

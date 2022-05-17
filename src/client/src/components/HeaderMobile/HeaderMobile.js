@@ -9,7 +9,7 @@ const HeaderMobile = () => {
         <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', padding: '20px' }}>
             <Burger />
             <NavLink style={{ display: 'flex', justifyContent: 'center' }} to="/">
-                <img style={{ width: '50%' }} src={divisaItLogo} />
+                <img style={{ width: '65%' }} src={divisaItLogo} />
             </NavLink>
             <div>
                 <img src={logoMadrid} />
