@@ -17,7 +17,7 @@ const esDate = new Intl.DateTimeFormat("es", {
 }).format(todaysDate);
 
 const MadridWeather = () => {
-  const [weatherData, setWeatherData] = useState("");
+  const [weatherData, setWeatherData] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
