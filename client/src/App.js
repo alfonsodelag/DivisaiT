@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Routes } from "react-router";
 import { MadridWeather } from "./pages/MadridWeather";
-import { ParkingSpots } from "./pages/ParkingSpots";
+import { FireFighterSpots } from "./pages/FireFighterSpots";
 import { Header } from "./components/Header";
 import { Home } from "./pages/Home";
 
@@ -15,7 +15,10 @@ function App() {
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route path="/tiempo-en-Madrid" element={<MadridWeather />} />
-          <Route path="/aparcamientos-publicos" element={<ParkingSpots />} />
+          <Route
+            path="/aparcamientos-publicos"
+            element={<FireFighterSpots />}
+          />
         </Routes>
       </div>
     </div>
