@@ -18,10 +18,5 @@ All commands run from project root:
 
 1. `cd src/client && npm install`
 2. `cd src/server && npm install`
-3. Make sure `nodemon` & `concurrently` are installed globally
-4. `npm run dev`
-
-You will now see the output of both the React dev server and the Node server in your shell, running at the same time thanks to `concurrently`. 
-
-Hope you've enjoyed the project!
+3. Run `npm run start` in both /client and /server
 
